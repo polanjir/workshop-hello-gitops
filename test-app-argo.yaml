@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-app-argo
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/polanjir/workshop-hello-gitops.git
+    targetRevision: HEAD
+    path: kustomize/base
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: hello-gitops
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    automated:
+      selfHeal: true
+      prune: true
