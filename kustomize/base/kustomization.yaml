@@ -8,4 +8,4 @@ namespace: hello-gitops
 images:
 - name: hello-gitops
   newName: piranacs/hello-gitops
-  newTag: d03957422828477c3f4d9889eff90c5349977626
+  newTag: 4b3ccde99cec5ae35651ce430f78fb7ffcd14633
